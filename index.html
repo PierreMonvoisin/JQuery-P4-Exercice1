@@ -6,25 +6,31 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body class="container bg-dark h-100 w-100">
+  <div class="row-fluid pt-5 text-center">
+    <label class="text-white" for="jumbotron"><h1>Appuyer sur la barre d'espace pour lancer le combat !</h1></label>
+  </div>
   <div class="row">
-    <div class="jumbotron bg-secondary mx-auto my-5 py-4">
-      <div>
-        <img src="/demo.jpg" alt="description" />
-        <img src="/demo.jpg" alt="description" />
-        <img src="/demo.jpg" alt="description" />
+    <div id="jumbotron" class="jumbotron bg-secondary d-flex mx-auto my-5 py-4">
+      <div class="robot bg-white border rounded mr-5 p-2">
+        <h3>Choix de l'IA</h3>
+        <img src="https://image.flaticon.com/icons/svg/31/31598.svg" class="IArock" alt="rock" />
+        <img src="https://image.flaticon.com/icons/svg/482/482658.svg" class="IApaper" alt="paper" />
+        <img src="https://image.flaticon.com/icons/svg/624/624837.svg" class="IAscissors" alt="scissors" />
       </div>
-      <hr class='bg-white mt-5'>
-      <div>
-
+      <div class="person bg-white border rounded p-2">
+        <h3>Votre choix</h3>
+        <img src="https://image.flaticon.com/icons/svg/31/31598.svg" class="rock" alt="rock" />
+        <img src="https://image.flaticon.com/icons/svg/482/482658.svg" class="paper" alt="paper" />
+        <img src="https://image.flaticon.com/icons/svg/624/624837.svg" class="scissors" alt="scissors" />
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Shi, Fu ou Mi ?
+        <button type="button" class="btn btn-sm h-40 ml-5 btn-dark my-auto dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <h3>Shi, Fu ou Mi ?</h3>
         </button>
-        <div class="dropdown-menu text-center">
-          <a class="dropdown-item">Pierre</a>
-          <a class="dropdown-item">Feuille</a>
-          <a class="dropdown-item">Ciseau</a>
+        <div class="dropdown-menu ml-4 text-center">
+          <a id="rock" class="dropdown-item bg-light">Pierre</a>
+          <a id="paper" class="dropdown-item bg-light">Feuille</a>
+          <a id="scissors" class="dropdown-item bg-light">Ciseaux</a>
         </div>
       </div>
     </div>
