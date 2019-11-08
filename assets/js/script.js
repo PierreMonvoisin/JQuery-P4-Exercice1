@@ -1,9 +1,8 @@
 $(function() {
   $('img').css({'width' : '150px','display' : 'none'});
   $('a').mouseover(function(){$(this).css('cursor', 'pointer')});
-  var choice = '';
-  var iaChoice = '';
-  var result = '';
+  var choice = '', iaChoice = '', result = '';
+  var win = 0, lost = 0;
 
   // Affiche votre choix Pierre / Feuille / Ciseaux
   $('a').click(function(){
@@ -53,23 +52,32 @@ $(function() {
       $('label h1').text(result).css('color','blue');
     } else if (choice == "rock" && iaChoice == "IAscissors"){
       result="Gagné !";
+      win += 1;
       $('label h1').text(result).css('color','green');
     } else if (choice == "paper" && iaChoice == "IArock"){
       result="Gagné !";
+      win += 1;
       $('label h1').text(result).css('color','green');
     } else if (choice == "scissors" && iaChoice == "IApaper"){
       result="Gagné !";
+      win += 1;
       $('label h1').text(result).css('color','green');
     } else if (iaChoice == "IArock" && choice == "scissors"){
       result="Perdu !";
+      lost += 1;
       $('label h1').text(result).css('color','red');
     } else if (iaChoice == "IApaper" && choice == "rock"){
       result="Perdu !";
+      lost += 1;
       $('label h1').text(result).css('color','red');
     } else if (iaChoice == "IAscissors" && choice == "paper"){
       result="Perdu !";
+      lost += 1;
       $('label h1').text(result).css('color','red');
     }
     console.log(result);
+    $('.winCounter').text('Vous : ' + win);
+    $('.loseCounter').text('Robot : ' + lost);
+    $('.WinLoseRate').text('Pourcentage : ' + Math.floor((win / (win + lost))*100)  + '%');
   };
 });
